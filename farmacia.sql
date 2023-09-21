@@ -154,3 +154,90 @@ ALTER TABLE movimientoInventario
 ADD idFormaPago INT(11);
 ALTER TABLE movimientoInventario
 ADD FOREIGN KEY (idFormaPago) REFERENCES formaPago(id);
+
+DML 
+INSERT (CREAR NUEVOS REGISTROS)
+
+INSERT INTO[TABLA](C1, C2, TC...) VALUES();
+VC -> ''
+FECHA -> ''
+NUMERICOS -> 4345
+pais
+INSERT INTO pais(nombre) VALUES('Colombia'); /* Para agregar un solo pais*/
+INSERT INTO pais(nombre) VALUES ('Peru'),('Ecuador'),('Panama'); /* Para agregar varios paises*/
+DELETE
+
+UPDATE
+
+DQL
+SELECT id,nombre FROM pais; /* Esto se hace para seleccionar los id y nombres de la tabla pais */
+
+
+ALTER TABLE pais;
+ADD UNIQUE (nombre);
+
+INSERT INTO departamento(nombre, idpaisFk) VALUES ('Amazonas',1),('Antioquia',1),('Arauca',1),('Atlantico',1),('Bolivar',1),('Boyaca',1),('Caldas',1),('Caqueta',1),('Casanare',1),('Cauca',1),('Cesar',1),('Choco',1),('Cordoba',1),('Cundinamarca',1),('Guainia',1),('Guaviare',1),('Huila',1),('La Guajira',1),('Magdalena',1),('Meta',1),('Nariño',1),('Norte de Santander',1),('Putumayo',1),('Quindio',1),('Risaraldas',1),('San Andrés y Providencias',1),('Santander',1),('Sucre',1),('Tolima',1),('Valle del Cauca',1),('Vaupes',1),('Vichada',1);
+
+INSERT INTO ciudad(nombre, iddepartamentoFk) VALUES ('Bucaramanga',27),('Floridablanca',27),('Piedecuesta',27),('Medellin',2),('Andes',2),('Necocli',2),('Paipa',6),('Chiquinquira',6),('Tunja',6);
+
+SELECT C1, C2, C3
+FROM TABLA
+INNER JOIN TBL1 ON PK = FK
+
+SELECT p.id, p.nombre AS NombrePais, d.nombre AS NombreDepartamento, c.nombre AS NombreCiudad
+FROM pais AS p
+JOIN departamento AS d ON p.id = d.idpaisFk;
+
+SELECT p.id, p.nombre AS NombrePais, d.nombre AS NombreDepartamento, c.nombre AS NombreCiudad
+FROM pais AS p
+JOIN departamento AS d ON p.id = d.idpaisFk
+JOIN ciudad AS c ON d.id = c.iddepartamentoFk;
+
+SELECT d.id, d.nombre AS Departamento, c.id,c.nombre AS Ciudad
+FROM departamento AS d
+JOIN ciudad AS c ON d.id = c.iddepartamentoFk;
+
+CLAUSULSA 
+- WHERE -> CONDICIONES DE CONSULTA
+OPERADORES COMPARACION
+
+=, <, >, >=, <>
+OPERADORES DE PATRON
+LIKE '%xxx%'
+     '%xxx'
+     'xxx%'
+
+OPERADORES LOGICOS
+AND, OR, NOT
+
+/* Para ordenar ascendentemente (A-Z)*/
+ORDER BY c.nombre ASC; /* Ordena las ciudades por nombre de forma ascendente */
+
+
+/* Para ordenar descendentemente (Z-A)*/
+ORDER BY c.nombre DESC; /* Ordena las ciudades por nombre de forma descendente*/
+
+SELECT p.id, p.nombre AS NombrePais, d.nombre AS NombreDepartamento, c.nombre AS NombreCiudad
+FROM pais AS p
+JOIN departamento AS d ON p.id = d.idpaisFk
+JOIN ciudad AS c ON d.id = c.iddepartamentoFk
+WHERE d.nombre LIKE '%Ant%'; /* Muestra los departamentos de la tabla que contengan las letras "ant" en ese orden de letras */
+
+SELECT p.id, p.nombre AS NombrePais, d.nombre AS NombreDepartamento, c.nombre AS NombreCiudad
+FROM pais AS p
+JOIN departamento AS d ON p.id = d.idpaisFk
+JOIN ciudad AS c ON d.id = c.iddepartamentoFk
+ORDER BY NombreCiudad ASC;
+
+
+/*----------------UPDATE----------------*/
+UPDATE
+UPDATE (TableName) SET C = V WHERE (Condition)
+INSERT INTO pais(nombre) VALUES ('Venezuela');
+UPDATE pais set nombre='Venezuela' WHERE id = 6;
+
+
+/*----------------DELETE----------------*/
+DELETE 
+DELETE FROM (TableName) WHERE (Condition)
+DELETE FROM pais AS p WHERE p.nombre="Venezuela";
