@@ -36,3 +36,7 @@ SELECT
 
 ### Conventional Commands 
 
+GRANT -> Para otorgar permisos a los usuarios para acceder a la base de datos o a objetos específicos dentro de ella.
+
+REVOKE -> Revocar o quitar permisos dados.
+

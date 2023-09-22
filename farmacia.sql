@@ -150,15 +150,57 @@ CREATE TABLE detalleMovInventario(
     CONSTRAINT FK_idInventario FOREIGN KEY (idInventario) REFERENCES inventario(id),
     CONSTRAINT FK_idMovInv FOREIGN KEY (idMovInv) REFERENCES movimientoInventario(id)
 );
+
+/* Creacion de la base de datos "farmacampus" con sus respectivas tablas */ 
+
+/* DDL Data Definition Language */
+
+Conventional Commands 
+
+CREATE -> Se utiliza para crear objetos de base de datos, como tablas, vistas, índices.
+
+ALTER -> Se utiliza para modificar la estructura de los objetos existentes en la base de
+datos.
+
+DROP -> Se utiliza para eliminar objetos de la base de datos
+
+/* DML Data Manipulation Language */
+
+Conventional Commands 
+
+SELECT -> Se utiliza para recuperar datos de una o más tablas.
+
+INSERT -> Se utiliza para insertar nuevos registros en una tabla.
+
+UPDATE -> Se utiliza para modificar los datos existentes en una tabla.
+
+DELETE -> Se utiliza para eliminar registros de una tabla.
+
+/* DQL Data Query Language */
+
+Conventional Commands 
+
+SELECT
+
+/* DCL Data Control Language */
+
+Conventional Commands 
+
+GRANT -> Para otorgar permisos a los usuarios para acceder a la base de datos o a objetos específicos dentro de ella.
+
+REVOKE -> Revocar o quitar permisos dados.
+
+
+ALTER TABLE (TableName) /* -> Se usa para hacer modificaciones luego de haber creado la tabla */
 ALTER TABLE movimientoInventario 
 ADD idFormaPago INT(11);
 ALTER TABLE movimientoInventario
 ADD FOREIGN KEY (idFormaPago) REFERENCES formaPago(id);
 
 DML 
-INSERT (CREAR NUEVOS REGISTROS)
+INSERT (CREAR NUEVOS REGISTROS) 
 
-INSERT INTO[TABLA](C1, C2, TC...) VALUES();
+INSERT INTO (TableName) (C1, C2, TC...) VALUES();
 VC -> ''
 FECHA -> ''
 NUMERICOS -> 4345
@@ -241,3 +283,9 @@ UPDATE pais set nombre='Venezuela' WHERE id = 6;
 DELETE 
 DELETE FROM (TableName) WHERE (Condition)
 DELETE FROM pais AS p WHERE p.nombre="Venezuela";
+
+
+/* My own database */
+
+CREATE DATABASE myDataBase;
+
